@@ -1,0 +1,41 @@
+(include "./widgets/calendar/calendar.yuck")
+(include "./widgets/right/right.yuck")
+(include "./widgets/left/left.yuck")
+
+(defwidget center []
+    (box
+        :class "container"
+        :halign "center"
+        :hexpand true
+
+    )
+)
+
+(defwidget taskbar []
+    (centerbox
+        :orientation "h"
+        :class "bar"
+        :halign "fill"
+        (left)
+        (center)
+        (right)
+    )
+)
+
+(defwindow taskbar
+    :monitor 0
+    :exclusive true
+    :geometry
+        (geometry
+            :x "0%"
+            :y "15px"
+            :width "100%"
+            :anchor "top center"
+            :hexpand true
+        )
+    :stacking "fg"
+    :reserve (struts :distance "40px" :side "top")
+    :windowtype "dock"
+    :wm-ignore false
+    (taskbar)
+)

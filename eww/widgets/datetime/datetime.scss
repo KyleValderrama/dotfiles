@@ -1,0 +1,32 @@
+@import "/home/kyle/.cache/wal/colors.scss";
+
+.datetime {
+    padding-left: 3px;
+    padding-right: 3px;
+    font-family: "SF Pro";
+    color: white;
+    font-weight: bold;
+
+    .time {
+        font-size: 12px;
+
+        .mer {
+            margin-left: 4px;
+        }
+    }
+
+    .date {
+        font-size: 12px;
+    }
+}
+
+.btn {
+    all: unset;
+    transition: 0.4s;
+    border-radius: 5px;
+}
+
+.active {
+    background: $color1;
+    color: $foreground;
+}

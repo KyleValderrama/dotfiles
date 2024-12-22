@@ -1,0 +1,11 @@
+{
+  "ui_font_size": 13,
+  "buffer_font_size": 13,
+  "theme": {
+    "mode": "system",
+    "light": "Andromeda",
+    "dark": "One Dark"
+  },
+  "ui_font_family": "SF Pro",
+  "buffer_font_family": "JetBrainsMono Nerd Font"
+}

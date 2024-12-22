@@ -1,0 +1,5 @@
+modmap:
+  - name: Mouse Binding # Optional
+    remap: # Required
+      # Replace a key with another
+      BTN_EXTRA: KEY_P # Required

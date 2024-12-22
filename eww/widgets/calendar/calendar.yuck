@@ -1,0 +1,17 @@
+(defwindow calendar
+    :monitor 0
+    :geometry
+        (geometry
+            :x "15px"
+            :y "5px"
+            :width "200px"
+            :anchor "top right"
+            :hexpand true
+        )
+    :stacking "fg"
+    :windowtype "dock"
+    :wm-ignore false
+    (calendar
+        :class "cal"
+    )
+)
