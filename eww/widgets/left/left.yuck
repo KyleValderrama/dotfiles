@@ -3,9 +3,8 @@
         :class "container"
         :halign "start"
         :hexpand true
-        (image
-            :path "/home/kyle/.config/eww/widgets/left/archlinux.svg"
-            :image-height 14
+        (label
+            :text "󰨡"
         )
     )
 )

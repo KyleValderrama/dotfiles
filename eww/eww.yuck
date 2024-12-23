@@ -27,15 +27,14 @@
     :exclusive true
     :geometry
         (geometry
-            :x "0%"
-            :y "15px"
+            :x "0"
+            :y "0"
             :width "100%"
             :anchor "top center"
             :hexpand true
         )
     :stacking "fg"
-    :reserve (struts :distance "40px" :side "top")
+    :namespace "taskbar"
     :windowtype "dock"
-    :wm-ignore false
     (taskbar)
 )

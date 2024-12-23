@@ -1,19 +1,8 @@
-(defpoll time_hour :interval "5m"
-       "date +\"%I\"")
-(defpoll time_year :interval "5m"
-       "date +\"%Y\"")
-(defpoll time_min :interval "5s"
-       "date +\"%M\"")
-(defpoll time_mer :interval "12h"
-        "date +\"%p\"")
-(defpoll time_day :interval "30m"
-       "date +\"%d\"")
-(defpoll time_month :interval "48h"
-      "date +\%m")
-(defpoll time_day_name :interval "30m"
-       "date +\"%a\"")
-(defpoll time_month_name :interval "48h"
-      "date +\%b")
+(defpoll time :interval "5s"
+       `date +%I:%M' '%p`)
+(defpoll date :interval "5m"
+       `date +%a' '%b' '%d`)
+
 
 (defvar calendar_open false)
 
@@ -24,13 +13,7 @@
         :space-evenly false
         :class "date"
         (label
-            :text "${time_day_name} "
-        )
-        (label
-            :text "${time_month_name} "
-        )
-        (label
-            :text time_day
+            :text date
         )
     )
 )
@@ -43,21 +26,10 @@
         :halign "end"
         :class "time"
         (label
-            :text time_hour
+            :text time
             :hexpand false
             :wrap true
         )
-        (label
-            :text ":"
-        )
-  		(label
-            :text time_min
-        )
-        (label
-            :class "mer"
-            :text "${time_mer}"
-        )
-
     )
 )
 
@@ -69,6 +41,8 @@
         :onclick {calendar_open ? "${EWW_CMD} close calendar && ${EWW_CMD} update calendar_open=false" : "${EWW_CMD} open calendar && ${EWW_CMD} update calendar_open=true"}
         (box
             :orientation "h"
+            :space-evenly false
+            :spacing 15
             :halign "end"
             :class "datetime"
             (date)

@@ -1,15 +1,18 @@
 @import "/home/kyle/.config/eww/widgets/datetime/datetime.scss";
 @import "/home/kyle/.config/eww/widgets/calendar/calendar.scss";
 @import "/home/kyle/.cache/wal/colors.scss";
+
 .taskbar {
     background: transparent;
 }
 
 .bar {
-    /* background-color: transparentize($background, 0.5); */
-    margin-left: 15px;
-    margin-right: 15px;
-    border-radius: 5px;
+    background-color: transparentize($color3, 0.7);
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: 0.3px solid transparentize(white, 0.2);
 }
 
 .container {
