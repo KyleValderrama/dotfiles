@@ -1,0 +1,50 @@
+@import "/home/kyle/.cache/wal/colors.scss";
+
+.calendar,
+.calendar-widget {
+    background: transparent;
+}
+
+.outer-box-calendar {
+    background-color: transparentize($color4, 0.5);
+    border: 0.3px solid transparentize(white, 0.5);
+
+    border-radius: 8px;
+    font-family: "SF Compact Display";
+    padding: 8px;
+    padding-bottom: 0px;
+}
+
+.calendar-component {
+    background: transparent;
+    border: none;
+    padding: 3px;
+    color: transparentize(white, 0.4);
+    font-size: 13px;
+
+    &:selected {
+        color: white;
+        font-weight: 700;
+        text-shadow: 1px 1px 2px transparentize($background, 0.6);
+    }
+
+    &.button {
+        border: none;
+    }
+
+    &.highlight {
+        color: transparentize(white, 0.3);
+    }
+
+    &:indeterminate {
+        color: transparentize(white, 0.8);
+    }
+
+    &.header {
+        border-bottom: 0.3px solid transparentize(white, 0.4);
+        &.year {
+            font-size: 14px;
+            font-weight: 700;
+        }
+    }
+}

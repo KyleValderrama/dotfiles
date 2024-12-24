@@ -1,5 +1,6 @@
-@import "/home/kyle/.config/eww/widgets/datetime/datetime.scss";
-@import "/home/kyle/.config/eww/widgets/calendar/calendar.scss";
+@import "/home/kyle/.config/eww/widgets/right/datetime/datetime.scss";
+@import "/home/kyle/.config/eww/widgets/right/calendar/calendar.scss";
+@import "/home/kyle/.config/eww/widgets/left/left.scss";
 @import "/home/kyle/.cache/wal/colors.scss";
 
 .taskbar {
@@ -17,6 +18,7 @@
 
 .container {
     /* background-color: rgba(0, 0, 0, 0.3); */
+    color: white;
     padding: 5px;
 }
 

@@ -1,10 +1,29 @@
+(deflisten hyprland_workspaces "hyprland-workspaces _")
+
+(defwidget workspaces []
+    (box
+        :spacing 10
+        :space-evenly false
+        :valign "center"
+        (for i in {hyprland_workspaces[0].workspaces}
+            (button
+                :width 10
+                :valign "start"
+                :height 10
+                :class {i.active ? "workspace-button active" : "workspace-button"}
+                :onclick "hyprctl dispatch workspace ${i.id}"
+            )
+        )
+    )
+)
+
 (defwidget left []
     (box
         :class "container"
         :halign "start"
         :hexpand true
-        (label
-            :text "󰨡"
-        )
+        :spacing 20
+        :space-evenly false
+        (workspaces)
     )
 )

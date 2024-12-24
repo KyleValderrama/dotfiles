@@ -20,5 +20,6 @@ decoration {
         vibrancy = 0.1696
         blurls = taskbar
         layerrule = blur,taskbar
+        layerrule = blur,calendar
     }
 }

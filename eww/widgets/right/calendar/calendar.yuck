@@ -1,5 +1,7 @@
 (defwindow calendar
     :monitor 0
+    :namespace "calendar"
+    :class "calendar-widget"
     :geometry
         (geometry
             :x "15px"
@@ -10,8 +12,13 @@
         )
     :stacking "fg"
     :windowtype "dock"
-    :wm-ignore false
-    (calendar
-        :class "cal"
+    (box
+        :class "outer-box-calendar"
+        (box
+            :class "inner-box-calendar"
+            (calendar
+                :class "calendar-component"
+            )
+        )
     )
 )

@@ -33,8 +33,6 @@
     )
 )
 
-
-
 (defwidget datetime []
     (button
         :class {calendar_open ? "btn active" : "btn"}

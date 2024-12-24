@@ -1,7 +1,6 @@
 dconf
 github-copilot
 go
-gtk-3.0
 htop
 ibus
 kde.org
@@ -18,3 +17,6 @@ mimeapps.list
 trashrc
 user-dirs.dirs
 user-dirs.locale
+QtProject.conf
+vlc
+pavucontrol.ini

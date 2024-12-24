@@ -1,11 +1,4 @@
-(include "/home/kyle/.config/eww/widgets/datetime/datetime.yuck")
-
-
-(defpoll ethernet
-    :interval "5s"
-    "nmcli -t device | grep :connected -m1 | grep ethernet"
-)
-
+(include "/home/kyle/.config/eww/widgets/right/datetime/datetime.yuck")
 
 (defwidget right []
     (box
@@ -15,13 +8,9 @@
         :spacing 10
         :hexpand true
         :space-evenly false
-        (image
-            :class "image"
-            :path "/home/kyle/.config/eww/widgets/right/connection-icon.svg"
-            :image-height 13
-        )
         (systray
             :icon-size 16
+            :spacing 10
             :prepend-new true
         )
         (datetime)
