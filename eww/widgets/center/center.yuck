@@ -1,0 +1,22 @@
+(defpoll tasks :interval "1s"
+    `~/.config/eww/scripts/get-open-clients.sh`
+)
+
+(defwidget center []
+    (box
+        :class "container"
+        :halign "center"
+        :hexpand true
+        :space-evenly false
+        :spacing 10
+        (for i in {tasks}
+            (button
+                :class {i.focusHistoryID == 0 ? "wlr-button active" : "wlr-button" }
+                (image
+                    :image-height 16
+                    :path "/home/kyle/.config/eww/taskbar-icons/${i.class}.png"
+                )
+            )
+        )
+    )
+)

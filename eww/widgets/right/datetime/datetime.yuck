@@ -40,7 +40,7 @@
         (box
             :orientation "h"
             :space-evenly false
-            :spacing 15
+            :spacing 10
             :halign "end"
             :class "datetime"
             (date)

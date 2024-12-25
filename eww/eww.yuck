@@ -1,15 +1,7 @@
 (include "./widgets/right/calendar/calendar.yuck")
 (include "./widgets/right/right.yuck")
 (include "./widgets/left/left.yuck")
-
-(defwidget center []
-    (box
-        :class "container"
-        :halign "center"
-        :hexpand true
-
-    )
-)
+(include "./widgets/center/center.yuck")
 
 (defwidget taskbar []
     (centerbox

@@ -1,1 +1,29 @@
 @import "/home/kyle/.cache/wal/colors.scss";
+
+.right {
+    color: white;
+    text-shadow: 1px 1px 2px transparentize(black, 0.8);
+}
+
+scale,
+slider,
+trough {
+    all: unset;
+}
+
+scale {
+    background: transparent;
+}
+
+highlight {
+    background: white;
+    border: none;
+    border-radius: 10px;
+}
+
+trough {
+    background: transparentize(white, 0.5);
+    border: 0.5px solid transparentize(white, 0.5);
+    border-radius: 10px;
+    min-height: 2px;
+}

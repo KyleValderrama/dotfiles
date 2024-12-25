@@ -1,18 +1,51 @@
 (include "/home/kyle/.config/eww/widgets/right/datetime/datetime.yuck")
 
+(deflisten volume
+    `pactl subscribe | grep --line-buffered "sink" | xargs -n1 ~/.config/eww/scripts/volume.sh`
+)
+
+(defvar show_volume false)
+
+(defwidget volume_control []
+    (box
+        :class "volume_control"
+        :orientation "h"
+        :space-evenly false
+        :valign "start"
+        :spacing {show_volume ? 5 : 0}
+        (label :text "􀊩")
+        (revealer
+            :width 0
+            :reveal show_volume
+            :transition "slideright"
+            (scale
+                :width 80
+                :transition "slideright"
+                :value volume
+                :orientation "h"
+                :onchange
+                    "pactl set-sink-volume @DEFAULT_SINK@ {}%"
+            )
+        )
+    )
+)
+
 (defwidget right []
     (box
-        :class "container"
+        :class "container right"
         :halign "end"
         :orientation "h"
+        :valign "center"
         :spacing 10
         :hexpand true
         :space-evenly false
         (systray
             :icon-size 16
-            :spacing 10
+            :spacing 2
             :prepend-new true
         )
+        (label :text "􀙇")
+        (volume_control)
         (datetime)
     )
 )

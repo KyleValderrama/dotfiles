@@ -5,11 +5,11 @@
     border-radius: 100%;
     background: transparentize(white, 0.5);
     transition: 0.4s;
-    box-shadow: 1px 1px 2px transparentize($background, 0.6);
 }
 
-.active {
+.workspace-button.active {
     background: white;
+    box-shadow: 1px 1px 2px transparentize($background, 0.6);
 }
 
 .logo {

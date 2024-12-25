@@ -6,11 +6,9 @@
 }
 
 .outer-box-calendar {
-    background-color: transparentize($color4, 0.5);
-    border: 0.3px solid transparentize(white, 0.5);
-
+    background-color: transparentize($background, 0.4);
+    border: 0.3px solid transparentize($background, 0.6);
     border-radius: 8px;
-    font-family: "SF Compact Display";
     padding: 8px;
     padding-bottom: 0px;
 }

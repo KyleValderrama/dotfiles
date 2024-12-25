@@ -1,6 +1,8 @@
 @import "/home/kyle/.config/eww/widgets/right/datetime/datetime.scss";
 @import "/home/kyle/.config/eww/widgets/right/calendar/calendar.scss";
 @import "/home/kyle/.config/eww/widgets/left/left.scss";
+@import "/home/kyle/.config/eww/widgets/right/right.scss";
+@import "/home/kyle/.config/eww/widgets/center/center.scss";
 @import "/home/kyle/.cache/wal/colors.scss";
 
 .taskbar {
@@ -8,12 +10,10 @@
 }
 
 .bar {
-    background-color: transparentize($color3, 0.7);
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-bottom: 0.3px solid transparentize(white, 0.2);
+    background-color: transparentize($background, 0.7);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 0.3px solid transparentize($background, 0.6);
 }
 
 .container {

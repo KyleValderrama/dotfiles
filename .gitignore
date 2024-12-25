@@ -10,6 +10,7 @@ systemd
 unity3d
 xfce4
 yay
+Thunar
 baloofileinformationrc
 dolphinrc
 gwenviewrc
@@ -20,3 +21,4 @@ user-dirs.locale
 QtProject.conf
 vlc
 pavucontrol.ini
+taskbar-icons

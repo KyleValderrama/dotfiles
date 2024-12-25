@@ -1,0 +1,16 @@
+.wlr-button {
+    all: unset;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.wlr-button:hover {
+    background-color: transparentize($color3, 0.5);
+}
+
+.wlr-button.active {
+    border: 0.3px solid transparentize(white, 0.4);
+
+    background-color: transparentize($color3, 0.2);
+    box-shadow: 1px 1px 2px transparentize($background, 0.6);
+}

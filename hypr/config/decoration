@@ -21,5 +21,6 @@ decoration {
         blurls = taskbar
         layerrule = blur,taskbar
         layerrule = blur,calendar
+        layerrule = blur,gtk-layer-shell
     }
 }
