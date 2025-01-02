@@ -36,9 +36,15 @@
 (defwidget datetime []
     (button
         :class {calendar_open ? "btn active" : "btn"}
-        :onclick {calendar_open ? "${EWW_CMD} close calendar && ${EWW_CMD} update calendar_open=false" : "${EWW_CMD} open calendar && ${EWW_CMD} update calendar_open=true"}
+        :onclick
+            {
+                calendar_open ?
+                "${EWW_CMD} close calendar menu-closer && ${EWW_CMD} update calendar_open=false" :
+                "${EWW_CMD} open-many menu-closer calendar && ${EWW_CMD} update calendar_open=true"
+            }
         (box
             :orientation "h"
+            :timeout 0
             :space-evenly false
             :spacing 10
             :halign "end"

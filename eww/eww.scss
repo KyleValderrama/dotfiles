@@ -7,19 +7,19 @@
 
 .taskbar {
     background: transparent;
+    padding: 2px;
 }
 
 .bar {
     background-color: transparentize($background, 0.7);
-    padding-left: 10px;
-    padding-right: 10px;
-    border-bottom: 0.3px solid transparentize($background, 0.6);
+    padding-left: 15px;
+    padding-right: 15px;
+    /* border-bottom: 0.3px solid transparentize($background, 0.6); */
 }
 
 .container {
     /* background-color: rgba(0, 0, 0, 0.3); */
     color: white;
-    padding: 5px;
 }
 
 .image {

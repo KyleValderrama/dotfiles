@@ -12,6 +12,11 @@
     box-shadow: 1px 1px 2px transparentize($background, 0.6);
 }
 
+.workspace-button.magic {
+    background: $color3;
+    box-shadow: 1px 1px 2px transparentize($background, 0.6);
+}
+
 .logo {
     font-size: 16px;
 }

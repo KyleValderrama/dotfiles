@@ -1,30 +1,69 @@
 (include "/home/kyle/.config/eww/widgets/right/datetime/datetime.yuck")
 
-(deflisten volume
-    `pactl subscribe | grep --line-buffered "sink" | xargs -n1 ~/.config/eww/scripts/volume.sh`
+(defvar volume 100)
+(defvar show_volume false)
+(defvar muted false)
+(defvar timer 3)
+(defpoll countdown :interval '1s'
+    :run-while show_volume
+    `eww update timer=$[$(eww get timer) - 1] && eww get timer | grep -q '0' && eww update timer=3 && eww update show_volume=false`
+)
+(defpoll internet
+    :initial "limited"
+    :interval '1s'
+    `nmcli networking connectivity check`
 )
 
-(defvar show_volume false)
+(deflisten mic_status
+    :initial true
+    `pactl subscribe | grep --line-buffered 'source' | xargs -n 1 ~/.config/eww/scripts/mic.sh`
+)
+
 
 (defwidget volume_control []
-    (box
-        :class "volume_control"
-        :orientation "h"
-        :space-evenly false
-        :valign "start"
-        :spacing {show_volume ? 5 : 0}
-        (label :text "􀊩")
-        (revealer
-            :width 0
-            :reveal show_volume
-            :transition "slideright"
-            (scale
-                :width 80
+    (eventbox
+        :onhover "${EWW_CMD} update show_volume=true && ${EWW_CMD} update hovered=true"
+        :onhoverlost "${EWW_CMD} update hovered=false"
+        (box
+            :class "volume_control"
+            :orientation "h"
+            :space-evenly false
+            :valign "start"
+            :halign "start"
+            :spacing {show_volume ? 5 : 0}
+            (overlay
+                (box
+                    :width 21
+                    :space-evenly false
+                    :halign "start"
+                        {
+                            muted ? "􀊣" :
+                            (volume == 0) ? "􀊡" :
+                            (volume > 0 && volume <= 20) ? "􀊥" :
+                            (volume > 20 && volume <= 60) ? "􀊧" :
+                            "􀊩"
+                        }
+                )
+                (box
+                    :class "volume-overlay"
+                    :width 21
+                    :space-evenly false
+                    :halign "start"
+                    {muted ? "" : "􀊩"}
+                )
+            )
+            (revealer
+                :width 0
+                :reveal show_volume
                 :transition "slideright"
-                :value volume
-                :orientation "h"
-                :onchange
-                    "pactl set-sink-volume @DEFAULT_SINK@ {}%"
+                (scale
+                    :width 80
+                    :transition "slideright"
+                    :value volume
+                    :orientation "h"
+                    :onchange
+                        "pactl set-sink-volume @DEFAULT_SINK@ {}% && ${EWW_CMD} update timer=3 && ${EWW_CMD} update show_volume=true && ${EWW_CMD} update volume=$(/home/kyle/.config/eww/scripts/volume.sh)"
+                )
             )
         )
     )
@@ -39,12 +78,42 @@
         :spacing 10
         :hexpand true
         :space-evenly false
+        (eventbox
+            :class {mic_status ? "btn mic active" : "btn mic" }
+            :width 20
+            :onclick `pactl list sources | grep -qi 'Mute: yes' && pactl set-source-mute @DEFAULT_SOURCE@ false || pactl set-source-mute @DEFAULT_SOURCE@ true`
+            (overlay
+                (revealer
+                    :reveal mic_status
+                    :transition "crossfade"
+                    (box
+                        :class "mic-box"
+                        "􀊱"
+                    )
+                )
+                (revealer
+                    :reveal { mic_status ? false : true }
+                    :transition "crossfade"
+                    (box
+                        :class "mic-box"
+                        "􀊳"
+                    )
+                )
+            )
+        )
         (systray
             :icon-size 16
             :spacing 2
             :prepend-new true
         )
-        (label :text "􀙇")
+        (box
+            {
+                internet == 'full' ? "􀙇" :
+                internet == 'limited' ? "􀙥" :
+                internet == 'portal' ? "􀙥" :
+                internet == 'none' ? "􀙈" : "􀙈"
+            }
+        )
         (volume_control)
         (datetime)
     )

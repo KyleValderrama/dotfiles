@@ -22,5 +22,6 @@ decoration {
         layerrule = blur,taskbar
         layerrule = blur,calendar
         layerrule = blur,gtk-layer-shell
+        layerrule = ignorezero,menu-closer
     }
 }

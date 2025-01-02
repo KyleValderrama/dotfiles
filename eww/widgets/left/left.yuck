@@ -10,7 +10,7 @@
                 :width 10
                 :valign "start"
                 :height 10
-                :class {i.active ? "workspace-button active" : "workspace-button"}
+                :class {i.name == "special:magic" ? "workspace-button magic" :  i.active ? "workspace-button active" : "workspace-button"}
                 :onclick "hyprctl dispatch workspace ${i.id}"
             )
         )

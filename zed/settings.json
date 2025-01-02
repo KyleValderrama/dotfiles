@@ -1,4 +1,11 @@
 {
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-3-5-sonnet"
+    },
+    "version": "2"
+  },
   "ui_font_size": 13,
   "buffer_font_size": 13,
   "theme": {
@@ -6,6 +13,7 @@
     "light": "Andromeda",
     "dark": "One Dark"
   },
+  "soft_wrap": "editor_width",
   "ui_font_family": "SF Compact Text",
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "tab_bar": {
