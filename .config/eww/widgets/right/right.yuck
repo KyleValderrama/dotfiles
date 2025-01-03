@@ -28,7 +28,7 @@
             :class "volume_control"
             :orientation "h"
             :space-evenly false
-            :valign "start"
+            :valign "center"
             :halign "start"
             :spacing {show_volume ? 5 : 0}
             (overlay
@@ -81,6 +81,7 @@
         (eventbox
             :class {mic_status ? "btn mic active" : "btn mic" }
             :width 20
+            :height 20
             :onclick `pactl list sources | grep -qi 'Mute: yes' && pactl set-source-mute @DEFAULT_SOURCE@ false || pactl set-source-mute @DEFAULT_SOURCE@ true`
             (overlay
                 (revealer
