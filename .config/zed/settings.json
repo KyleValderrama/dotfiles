@@ -1,5 +1,5 @@
 {
-  "vim_mode": true,
+  "vim_mode": false,
   "assistant": {
     "button": false,
     "default_model": {
@@ -54,7 +54,7 @@
     "button": false
   },
   "chat_panel": {
-    "button": false
+    "button": true
   },
   "notification_panel": {
     "button": false

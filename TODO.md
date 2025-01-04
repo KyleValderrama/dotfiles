@@ -1,5 +1,6 @@
 ## TODO
-- [-] Change bash prompt (add header to kitty)
+- [x] Add header to kitty - tab bar
+- [ ] Modify Starship
 - [x] Update dotfiles location
 - [x] Find a way to add transparency to Zed
 - [ ] Tweak calendar
