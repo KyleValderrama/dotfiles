@@ -64,8 +64,8 @@ def draw_tab(
     #     draw_data, screen, tab, before, max_title_length, index, is_last, extra_data
     # )
     cwd = get_boss().active_tab_manager.active_window.cwd_of_child or ''
-    screen.cursor.bg = as_rgb(get_color(9))
-    screen.cursor.fg = as_rgb(int(draw_data.active_bg))
+    screen.cursor.bg = as_rgb(int(draw_data.active_bg))
+    screen.cursor.fg = as_rgb(get_color(1))
     screen.draw(f" 󰋜 ")
 
     screen.cursor.fg = as_rgb(int(draw_data.default_bg))
@@ -80,14 +80,14 @@ def draw_tab(
     dirs = path.split("/")
     for idx, dir in enumerate(dirs):
         if dir != '':
-            screen.cursor.fg = as_rgb(int(draw_data.active_bg))
+            screen.cursor.fg = as_rgb(get_color(1))
             screen.draw(f" {dir} ")
         if idx != len(dirs) - 1:
             screen.cursor.fg = as_rgb(int(draw_data.default_bg))
             screen.draw(f"\ue0b1")
 
 
-    screen.cursor.fg = as_rgb(get_color(9))
+    screen.cursor.fg = as_rgb(int(draw_data.active_bg))
     screen.cursor.bg = as_rgb(int(draw_data.default_bg))
     screen.draw(f"\ue0b0")
 

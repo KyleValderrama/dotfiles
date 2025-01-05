@@ -21,6 +21,10 @@ yay -S eww
 ```
 
 #### Install hyprland dependencies
-```sh
+```sd
 sudo pacman -S hyprpaper ttf-jetbrains-mono-nerd stow thunar
 ```
+
+### pkgs 
+- bluetooth: bluez bluez-utils
+- cd: zoxide fzf

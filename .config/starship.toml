@@ -1,26 +1,49 @@
-# Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
-
 format = """
+$directory $git_branch $git_status\ 
+$fill\
+$cmd_duration\
 $character\
-$git_branch\
-$git_state\
-$git_status\
-$git_metrics\
-$cmd_duration $jobs $time\
+$line_break\
+$time
 """
 
-# Replace the '❯' symbol in the prompt with '➜'
-[character] # The name of the module we are configuring is 'character'
-success_symbol = '[􀆂](bold white)'
-error_symbol = "[􀁡](bold red)"
-
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
-
 [directory]
-style = "blue"
-read_only = "🔒"
-truncation_length = 4
+style = "bg:cyan bright-black"
+read_only = "󰣮 "
+truncation_length = 1
 truncate_to_repo = false
+format = '[░▒▓](cyan)[ $path ]($style)[$read_only]($style)[](bg:black fg:cyan)'
+
+[git_branch]
+symbol = ""
+format = '[[$symbol $branch](fg:bright-purple)]($style)'
+
+[git_status]
+format = '[$all_status$ahead_behind]($style)'
+untracked = '[ ](fg:green)'
+deleted = '[ ](fg:red)'
+modified = '[ ](fg:yellow)'
+staged = '[ ](fg:cyan)'
+conflicted = '[  ](fg:red)'
+ahead = '[ ](fg:green)'
+behind = '[ ](fg:yellow)'
+diverged = '[ ](fg:cyan)'
+stashed = '[ ](fg:cyan)' 
+ 
+[fill]
+symbol = " "
+
+[cmd_duration]
+format = "[$duration](fg:#7c7c7c) "
+disabled = false
+
+[character] 
+success_symbol = "[ ](bold green)"
+error_symbol = "[ ](bold red)"
+
+[time]
+disabled = false
+time_format = "%T"
+format = '[$time  ](fg:#a0a9cb) '
+
+

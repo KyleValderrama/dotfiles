@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 eval "$(starship init bash)"
+eval "$(zoxide init --cmd cd bash)"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'

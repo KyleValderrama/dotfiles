@@ -1,6 +1,7 @@
 ## TODO
 - [x] Add header to kitty - tab bar
-- [ ] Modify Starship
+- [x] Modify Starship config
+- [ ] Fix automatic login when opening bash
 - [x] Update dotfiles location
 - [x] Find a way to add transparency to Zed
 - [ ] Tweak calendar
