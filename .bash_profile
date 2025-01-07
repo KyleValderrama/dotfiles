@@ -5,7 +5,7 @@ if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
 
-if [ -z "$SSH_AUTH_SOCK" ]; then
-	eval `ssh-agent -s`
-	ssh-add ~/.ssh/id_gh
-fi
+ssh-add &>/dev/null || eval `ssh-agent` &>/dev/null
+[ $? -eq 0 ] && {                                     
+	ssh-add ~/.ssh/id_ms_gh &>/dev/null 
+}

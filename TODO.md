@@ -1,9 +1,10 @@
 ## TODO
 - [x] Add header to kitty - tab bar
 - [x] Modify Starship config
-- [ ] Fix automatic login when opening bash
+- [x] Fix automatic login when opening bash
 - [x] Update dotfiles location
 - [x] Find a way to add transparency to Zed
+- [x] Update vim config colors
 - [ ] Tweak calendar
 - [ ] Add CPU, GPU, Processes, Packages widget
 - [ ] Tweak GTK Theme
