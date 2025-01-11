@@ -1,27 +1,34 @@
 decoration {
     rounding = 8
-    active_opacity = 1.0
 
     active_opacity = 1.0
     inactive_opacity = 1.0
 
+    # dim_inactive = true
+    # dim_strength = 0.2
+
     shadow {
-        enabled = false
-        range = 4
+        enabled = true
+        range = 20
         render_power = 3
-        color = rgba(1a1a1aee)
+        color = rgba(0000004D)
+	color_inactive = rgba(00000000)
     }
 
     # https://wiki.hyprland.org/Configuring/Variables/#blur
     blur {
         enabled = true
-        size = 6
-        passes = 2
+        size = 8
+        passes = 3
         vibrancy = 0.1696
+	new_optimizations = true
         blurls = taskbar
         layerrule = blur,taskbar
         layerrule = blur,calendar
         layerrule = blur,gtk-layer-shell
         layerrule = ignorezero,menu-closer
+	special = true
+	popups = true
+	input_methods = true
     }
 }

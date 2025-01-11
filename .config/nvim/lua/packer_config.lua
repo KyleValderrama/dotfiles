@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use('mg979/vim-visual-multi', {branch = 'maser'})
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use({
 	"neovim/nvim-lspconfig",

@@ -5,6 +5,10 @@
 - [x] Update dotfiles location
 - [x] Find a way to add transparency to Zed
 - [x] Update vim config colors
+- [x] Install archlinux on raspberry pi
+- [x] Access rpi thru ssh
+- [x] Create CCTV streaming script
+- [ ] Fix crontab on rpi
 - [ ] Tweak calendar
 - [ ] Add CPU, GPU, Processes, Packages widget
 - [ ] Tweak GTK Theme
