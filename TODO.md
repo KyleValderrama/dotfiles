@@ -8,10 +8,10 @@
 - [x] Install archlinux on raspberry pi
 - [x] Access rpi thru ssh
 - [x] Create CCTV streaming script
-- [ ] Fix crontab on rpi
+- [x] Fix crontab on rpi
+- [ ] Tweak GTK Theme
 - [ ] Tweak calendar
 - [ ] Add CPU, GPU, Processes, Packages widget
-- [ ] Tweak GTK Theme
 - [ ] Tweak System notifications
 - [ ] Update workspaces left widget (add animations)
 - [ ] Change systray to expandable
