@@ -1,18 +1,44 @@
 format = """
+[┌](white)\
+[](bg1)\
+$os\
+$username\
+[](fg:bg1 bg:bg2)\
 $directory $git_branch $git_status\ 
 $fill\
 $cmd_duration\
 $character\
 $line_break\
+[└](white)\
 $time
 """
 
+palette = "default"
+
+[palettes.default]
+bg1 = "#383838"
+bg2 = "#636262"
+
+[os]
+disabled = false
+style = "bg:bg1 fg:white"
+
+
+[username]
+show_always = true
+style_user = "bg:bg1 fg:white"
+style_root = "bg:bg1 fg:white"
+format = '[ $user ]($style)'
+
+[os.symbols]
+Arch = "󰣇"
+
 [directory]
-style = "bg:cyan bright-black"
+style = "bg:bg2 white"
 read_only = "󰣮 "
 truncation_length = 1
 truncate_to_repo = false
-format = '[░▒▓](cyan)[ $path ]($style)[$read_only]($style)[](bg:black fg:cyan)'
+format = '[ $path ]($style)[$read_only]($style)[](bg:black fg:bg2)'
 
 [git_branch]
 symbol = ""
@@ -44,6 +70,6 @@ error_symbol = "[ ](bold red)"
 [time]
 disabled = false
 time_format = "%T"
-format = '[$time  ](fg:#a0a9cb) '
+format = '[\[$time\] ](fg:white) '
 
 

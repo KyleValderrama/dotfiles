@@ -12,7 +12,6 @@ return require('packer').startup(function(use)
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
-
   use('mg979/vim-visual-multi', {branch = 'maser'})
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use({
@@ -23,4 +22,7 @@ return require('packer').startup(function(use)
   	"williamboman/mason.nvim",
     	"williamboman/mason-lspconfig.nvim"
      })
+
+  use 'feline-nvim/feline.nvim'
+
 end)

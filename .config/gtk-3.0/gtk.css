@@ -1,1 +1,15 @@
-@import "/home/kyle/.cache/wal/colors-waybar.css";
+.sidebar {
+	background: transparent;
+}
+
+.thunar {
+	background: rgba(0,0,0, 0.5);
+}
+
+.view {
+	background: rgba(0,0,0, 0);
+}
+
+.standard-view {
+background: rgb(0,0,0);
+}
