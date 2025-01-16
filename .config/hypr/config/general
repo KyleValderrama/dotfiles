@@ -2,8 +2,8 @@ general {
     gaps_in = 6
     gaps_out = 20
     border_size = 0
-    col.active_border = rgb(4c415e) 
-    col.inactive_border = rgb(4c415e)
+    col.active_border = rgba(1a1a1a00) 
+    col.inactive_border = rgba(4c415e00)
     resize_on_border = false
     allow_tearing = false
     layout = dwindle

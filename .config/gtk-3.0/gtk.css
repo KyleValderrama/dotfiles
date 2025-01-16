@@ -11,5 +11,9 @@
 }
 
 .standard-view {
-background: rgb(0,0,0);
+	background: rgb(0,0,0);
+}
+
+.image-button {
+	transform: scale(0.5);
 }
