@@ -23,6 +23,10 @@ return require('packer').startup(function(use)
     	"williamboman/mason-lspconfig.nvim"
      })
 
-  use 'feline-nvim/feline.nvim'
+  use 'freddiehaddad/feline.nvim'
+  use ( "rose-pine/neovim", { name = "rose-pine" })
+
+  use "lewis6991/gitsigns.nvim"
+  use 'nvim-tree/nvim-web-devicons'
 
 end)
