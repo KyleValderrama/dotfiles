@@ -10,7 +10,7 @@ decoration {
 
   
     shadow {
-        enabled = true
+        enabled = false
         range = 20
         render_power = 4
         color = rgba(0000004d)
@@ -22,15 +22,21 @@ decoration {
         enabled = true
         size = 8
         passes = 3
-	ignore_opacity = true
         layerrule = blur,taskbar
         layerrule = blur,calendar
         layerrule = ignorezero,menu-closer
-	layerrule = unset,gtk-layer-shell
+	
+	layerrule = ignorezero,gtk-layer-shell
 	layerrule = unset,hyprpaper
+
 	special = true
 	popups = true
 	input_methods = true
     }
 }
 
+# NOTIFICATIONS
+
+layerrule = blur,notifications
+layerrule = ignorezero,notifications
+layerrule = animation slide, notifications

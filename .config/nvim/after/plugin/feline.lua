@@ -3,9 +3,9 @@ if not line_ok then
 	return
 end
 
-local one_monokai = {
+local rose_pine = {
 	fg = "#e0def4",
-	bg = "#232136",
+	bg = "#151031",
 	green = "#9ccfd8",
 	yellow = "#f6c177",
 	purple = "#c4a7e7",
@@ -34,90 +34,119 @@ local c = {
 			name = "vi_mode",
 			opts = {
 				show_mode_name = true,
-				-- padding = "center", -- Uncomment for extra padding.
 			},
 		},
 		hl = function()
 			return {
-				fg = require("feline.providers.vi_mode").get_mode_color(),
-				bg = "darkblue",
+				fg = "darkblue",
+				bg = require("feline.providers.vi_mode").get_mode_color(),
 				style = "bold",
-				name = "NeovimModeHLColor",
+				name = require("feline.providers.vi_mode").get_mode_color(),
 			}
 		end,
-		left_sep = "block",
-		right_sep = "block",
+		left_sep = {
+			str = "left_rounded",
+			hl = function() 
+				return {
+					fg = require("feline.providers.vi_mode").get_mode_color(),
+					bg = "transparent",
+				}
+			end
+		},
+		right_sep = "█",
 		icon = ""
 	},
 	gitBranch = {
 		provider = "git_branch",
 		hl = {
-			fg = "peanut",
-			bg = "darkblue",
+			fg = "purple",
+			bg = "transparent",
 			style = "bold",
 		},
-		left_sep = "block",
-		right_sep = "block",
+		right_sep = {
+			str = " ",
+			hl = {
+				fg = "transparent",
+				bg = "transparent"
+			}
+		},
+		left_sep = {
+			str = " ",
+			hl = {
+				fg = "transparent",
+				bg = "transparent"
+			}
+		}
 	},
 	gitDiffAdded = {
 		provider = "git_diff_added",
 		hl = {
 			fg = "green",
-			bg = "darkblue",
+			bg = "transparent",
 		},
-		left_sep = "block",
-		right_sep = "block",
 	},
 	gitDiffRemoved = {
 		provider = "git_diff_removed",
 		hl = {
 			fg = "red",
-			bg = "darkblue",
+			bg = "transparent",
 		},
-		left_sep = "block",
-		right_sep = "block",
 	},
 	gitDiffChanged = {
 		provider = "git_diff_changed",
 		hl = {
 			fg = "fg",
-			bg = "darkblue",
+			bg = "transparent",
 		},
-		left_sep = "block",
-		right_sep = "right_filled",
 	},
 	separator = {
 		provider = "",
+		hl = {
+			fg = "bg",
+			bg = "transparent"
+		}
 	},
 	fileinfo = {
 		provider = {
 			name = "file_info",
 			opts = {
-				type = "relative-short",
+				type = "base-only",
+				colored_icon = false,
+				file_readonly_icon = "",
 			},
 		},
 		hl = {
 			style = "bold",
+			bg = "bg"
 		},
 		left_sep = " ",
-		right_sep = " ",
+		right_sep = {
+			str = "█",
+			hl = {
+				fg = "bg",
+				bg = "transparent"
+			}
+		}
 	},
 	diagnostic_errors = {
 		provider = "diagnostic_errors",
 		hl = {
 			fg = "red",
+			bg = "transparent"
 		},
 	},
 	diagnostic_warnings = {
 		provider = "diagnostic_warnings",
 		hl = {
 			fg = "yellow",
+			bg = "transparent"
 		},
 	},
 	diagnostic_hints = {
 		provider = "diagnostic_hints",
 		hl = {
 			fg = "aqua",
+			bg = "transparent"
 		},
 	},
 	diagnostic_info = {
@@ -163,7 +192,7 @@ local c = {
 		provider = "position",
 		hl = {
 			fg = "green",
-			bg = "darkblue",
+			bg = "bg",
 			style = "bold",
 		},
 		left_sep = "block",
@@ -172,12 +201,17 @@ local c = {
 	line_percentage = {
 		provider = "line_percentage",
 		hl = {
-			fg = "aqua",
-			bg = "darkblue",
+			bg = "aqua",
 			style = "bold",
 		},
 		left_sep = "block",
-		right_sep = "block",
+		right_sep = {
+			str = "",
+			hl = {
+				fg = "aqua",
+				bg = "transparent"
+			}
+		}
 	},
 	scroll_bar = {
 		provider = "scroll_bar",
@@ -190,27 +224,29 @@ local c = {
 
 local left = {
 	c.vim_mode,
-	c.gitBranch,
-	c.gitDiffAdded,
-  c.gitDiffRemoved,
-	c.gitDiffChanged,
-	c.separator,
-}
-
-local middle = {
 	c.fileinfo,
 	c.diagnostic_errors,
 	c.diagnostic_warnings,
 	c.diagnostic_info,
 	c.diagnostic_hints,
+	}
+
+local middle = {
+	c.separator,
+	hl = {
+		bg = "transparent"
+	}
+
 }
 
 local right = {
-	c.lsp_client_names,
-	c.file_type,
-	c.file_encoding,
+	c.gitDiffAdded,
+        c.gitDiffRemoved,
+	c.gitDiffChanged,
+        c.gitBranch,
 	c.position,
 	c.line_percentage,
+
 }
 
 local components = {
@@ -228,8 +264,8 @@ local components = {
 
 feline.setup({
 	components = components,
-	theme = one_monokai,
+	theme = rose_pine,
 	vi_mode_colors = vi_mode_colors,
 })
 
-feline.statuscolumn.setup()
+-- feline.statuscolumn.setup()

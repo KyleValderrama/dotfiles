@@ -1,0 +1,5 @@
+require("trouble").setup()
+vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<CR>", { desc = "document diagnostics on opened buffers" })
+vim.keymap.set("n", "<leader>xn", "<cmd>Trouble lsp_references toggle<CR>", { desc = "go to references" })
+vim.keymap.set("n","<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", { desc = "Symbols (Trouble)"})
+vim.keymap.set('n', '<C-k>', '<cmd>lua vim.diagnostic.open_float()<CR>')
