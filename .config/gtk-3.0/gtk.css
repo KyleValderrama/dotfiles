@@ -1,3 +1,9 @@
+@import url("/home/kyle/.cache/wal/colors-waybar.css");
+
+* {
+	box-shadow: none;
+}
+
 .sidebar {
 	background: transparent;
 }
@@ -14,6 +20,19 @@
 	background: rgb(0,0,0);
 }
 
-.image-button {
-	transform: scale(0.5);
+menu {
+    padding: 8px 8px;           
+    font-size: 14px;             
+    color: #d8dee9;               
+    background-color: rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+menuitem:hover {
+    background-color: @color8;
+    color: #eceff4;
+}
+
+popup {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }

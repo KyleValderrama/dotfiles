@@ -1,3 +1,4 @@
 $terminal = kitty
 $fileManager = thunar
-$menu = wofi --show drun
+$menu = pgrep -x wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --prompt "Search..." --allow-images
+$browser = zen-browser

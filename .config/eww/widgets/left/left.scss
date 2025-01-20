@@ -2,9 +2,8 @@
 
 .workspace-button {
     all: unset;
-    border-radius: 100%;
+    border-radius: 100px;
     background: transparentize(white, 0.5);
-    transition: 0.4s;
 }
 
 .workspace-button.active {

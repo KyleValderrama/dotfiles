@@ -1,5 +1,5 @@
 decoration {
-    rounding = 8
+    rounding = 10
 
     active_opacity = 1.0
     inactive_opacity = 1.0
@@ -22,13 +22,8 @@ decoration {
         enabled = true
         size = 8
         passes = 3
-        layerrule = blur,taskbar
-        layerrule = blur,calendar
-        layerrule = ignorezero,menu-closer
 	
-	layerrule = ignorezero,gtk-layer-shell
 	layerrule = unset,hyprpaper
-
 	special = true
 	popups = true
 	input_methods = true
@@ -40,3 +35,19 @@ decoration {
 layerrule = blur,notifications
 layerrule = ignorezero,notifications
 layerrule = animation slide, notifications
+
+# TASKBAR
+layerrule = blur,taskbar
+layerrule = blurpopups, taskbar
+layerrule = ignorezero, taskbar
+layerrule = animation slide, taskbar
+layerrule = blur,calendar
+layerrule = animation slide, calendar
+layerrule = ignorezero,calendar
+layerrule = ignorezero,menu-closer
+layerrule = ignorezero,menu-closer
+
+# MENU
+
+layerrule = blur, wofi 
+layerrule = ignorezero, wofi

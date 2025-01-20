@@ -22,7 +22,7 @@
 
 (defwidget volume_control []
     (eventbox
-        :onhover "${EWW_CMD} update show_volume=true && ${EWW_CMD} update hovered=true"
+        :onclick "${EWW_CMD} update show_volume=true && ${EWW_CMD} update hovered=true"
         :onhoverlost "${EWW_CMD} update hovered=false"
         (box
             :class "volume_control"
@@ -69,6 +69,8 @@
     )
 )
 
+(defvar show_tray false)
+
 (defwidget right []
     (box
         :class "container right"
@@ -78,6 +80,27 @@
         :spacing 10
         :hexpand true
         :space-evenly false
+	(box
+		:space-evenly false
+		:class {show_tray ? "tray-container active" : "tray-container"}
+		(revealer
+			:transition "slideleft"
+			:reveal show_tray
+			(systray
+				:class "tray-items"
+		  		:icon-size 16
+		  		:spacing 4
+		  		:prepend-new true
+		 	)
+		)
+		(eventbox 
+			:class { show_tray ? "tray-trigger active" : "tray-trigger" }
+			:width 20
+			:height 20
+			:onclick {show_tray ? "${EWW_CMD} update show_tray=false" : "${EWW_CMD} update show_tray=true"} 
+			"􀈤"
+		)
+	)
         (eventbox
             :class {mic_status ? "btn mic active" : "btn mic" }
             :width 20
@@ -102,11 +125,7 @@
                 )
             )
         )
-        (systray
-            :icon-size 16
-            :spacing 2
-            :prepend-new true
-        )
+	
         (box
             {
                 internet == 'full' ? "􀙇" :

@@ -1,14 +1,20 @@
 @import "/home/kyle/.cache/wal/colors.scss";
 
 .calendar-widget {
-    background-color: transparentize(rgb(15, 15, 15), 0.3);
-    border-radius: 8px;
+  background-color: transparent;
+    border-radius: 10px;
 }
 
-.calendar,
+.calendar {
+  background-color: transparent;
+}
+
 .outer-box-calendar {
-    border: 0.3px solid transparentize($background, 0.6);
-    border-radius: 8px;
+ background-color: rgba(0, 0, 0, 0.5);
+}
+
+.outer-box-calendar {
+    border-radius: 10px;
     padding: 8px;
     padding-bottom: 0px;
 }
@@ -17,29 +23,34 @@
     background: transparent;
 }
 
+
 .calendar-component {
     background: transparent;
     border: none;
-    padding: 3px;
     color: transparentize(white, 0.4);
     font-size: 12px;
+
+    &.button {
+        all: unset;
+    }
+
 
     &:selected {
         color: white;
         font-weight: 700;
+        background-color: $color8;
         text-shadow: 1px 1px 2px transparentize($background, 0.6);
+        padding: 0px;
     }
 
-    &.button {
-        border: none;
-    }
-
+    
     &.highlight {
         color: transparentize(white, 0.3);
     }
 
     &:indeterminate {
         color: transparentize(white, 0.8);
+        padding: 0px;
     }
 
     &.header {
@@ -49,3 +60,11 @@
         font-weight: bold;
     }
 }
+
+calendar.buildable{
+  color: red;
+
+  
+}
+
+

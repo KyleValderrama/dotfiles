@@ -20,8 +20,8 @@
     :focusable true
     :geometry
         (geometry
-            :x "15px"
-            :y "5px"
+            :x "8px"
+            :y "8px"
             :width "200px"
             :anchor "top right"
             :hexpand true

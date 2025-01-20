@@ -1,0 +1,39 @@
+
+#window {  
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #303030;
+}
+
+#outer-box {
+	padding: 10px;
+}
+
+#scroll {
+	margin-top: 10px;
+}
+
+#entry {
+	background: transparent;
+	border:none;
+	padding:0;
+}
+
+.entry {
+	padding: 4px;
+}
+
+.entry#selected {
+	background: @color8;
+	border:none;
+	border-radius:8px;
+}
+
+.popup-menu-item:selected {
+	background-color: @color8;
+}
+
+.entry image {
+	margin-right: 10px;
+	border-radius: 8px;
+}
