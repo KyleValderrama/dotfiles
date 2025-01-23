@@ -1,4 +1,5 @@
-env = XCURSOR_SIZE,10
-env = HYPRCURSOR_SIZE,10
+env = XCURSOR_SIZE,24
+env = GDK_SCALE,1
+env = HYPRCURSOR_SIZE,24
 env = QT_QPA_PLATFORM,wayland
 env = GDK_BAKCEND,wayland

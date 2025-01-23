@@ -17,12 +17,11 @@ decoration {
 	color_inactive = rgba(00000000)
     }
 
-    # https://wiki.hyprland.org/Configuring/Variables/#blur
     blur {
         enabled = true
-        size = 8
+        size = 5
         passes = 3
-	
+	noise = 0.03
 	layerrule = unset,hyprpaper
 	special = true
 	popups = true

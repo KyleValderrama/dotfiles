@@ -6,8 +6,6 @@ $username\
 [](fg:bg1 bg:bg2)\
 $directory $git_branch $git_status\ 
 $fill\
-$cmd_duration\
-$character\
 $line_break\
 [└](white)\
 $time
@@ -36,9 +34,9 @@ Arch = "󰣇"
 [directory]
 style = "bg:bg2 white"
 read_only = "󰣮 "
-truncation_length = 1
+truncation_length = 3
 truncate_to_repo = false
-format = '[ $path ]($style)[$read_only]($style)[](bg:black fg:bg2)'
+format = '[ $path ]($style)[$read_only]($style)[](bg2)'
 
 [git_branch]
 symbol = ""

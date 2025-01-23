@@ -24,13 +24,13 @@
 }
 
 .entry#selected {
-	background: @color8;
+	background: @color4;
 	border:none;
 	border-radius:8px;
 }
 
 .popup-menu-item:selected {
-	background-color: @color8;
+	background-color: @color4;
 }
 
 .entry image {

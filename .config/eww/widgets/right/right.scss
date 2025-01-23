@@ -36,13 +36,11 @@ trough {
     min-height: 2px;
 }
 
-.mic {
-    text-shadow: none;
-}
-
 .btn.mic.active {
-    background: $color8;
+    text-shadow: none;
+    background: $color4;
     border-radius: 100%;
+    box-shadow: 2px 0px 10px transparentize(black, 0.2);
 }
 
 .tray-trigger {
@@ -50,7 +48,7 @@ trough {
 }
 
 .tray-trigger.active {
-  background: $color8;
+  background: $color4;
 }
 
 .tray-container.active {

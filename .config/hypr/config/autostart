@@ -3,3 +3,4 @@
 exec-once = hyprpaper
 exec-once = steam -silent
 exec-once = eww open taskbar
+exec-once = wallpaper-daemon random-wallpaper 10m

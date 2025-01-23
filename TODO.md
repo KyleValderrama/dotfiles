@@ -10,11 +10,11 @@
 - [x] Create CCTV streaming script
 - [x] Fix crontab on rpi
 - [x] Tweak GTK Theme
-- [-] Tweak calendar
-- [ ] Add CPU, GPU, Processes, Packages widget
+- [x] Tweak calendar
 - [x] Tweak System notifications
-- [ ] Customize drun
-- [ ] Wallpaper change ui, auto random get thru internet wallpapers
+- [x] Change to random wallpaper 
+- [x] Customize drun
+- [x] Change systray to expandable
+- [ ] Add CPU, GPU, Processes, Packages widget
 - [ ] Update workspaces left widget (add animations)
-- [ ] Change systray to expandable
 - [ ] Make widget for switching default sink and source (pactl) or write it with rust

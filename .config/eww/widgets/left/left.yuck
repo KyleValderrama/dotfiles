@@ -2,33 +2,21 @@
 
 (deflisten hyprland_workspaces "hyprland-workspaces _")
 
-(defpoll activews :interval ".5s" 
-    `hyprctl activeworkspace -j | jq '.id'`
-)
-
 (defwidget workspaces []
     (box
         :spacing 10
         :space-evenly false
         :valign "center"
         (for i in {hyprland_workspaces[0].workspaces}
-			(eventbox
-				:valign "start"
-				:class {i.name == "special:magic" ? "workspace-button magic" : i.id == activews ? "workspace-button active" : "workspace-button"}
-				:hexpand true
-				:onclick "hyprctl dispatch workspace ${i.id}"
-				:space-evenly false
-				(revealer
-					:width 10
-				  	:transition "slideright"
-				  	:reveal {i.id == activews}
-				  	(box 
-				   		:width 30
-				   		:height 10
-
-					)
-				 )
-			)
+	 (eventbox
+	  :valign "start"
+	  :class {i.name == "special:magic" ? "workspace-button magic" : i.active ? "workspace-button active" : "workspace-button"}
+	  :hexpand true
+	  :onclick "hyprctl dispatch workspace ${i.id}"
+	  :space-evenly false
+	  :width 10
+	  :height 10
+	 )
         )
     )
 )
@@ -41,7 +29,5 @@
         :spacing 20
         :space-evenly false
         (workspaces)
-	(label :text activews :visible false)
-
     )
 )

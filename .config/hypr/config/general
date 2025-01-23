@@ -2,11 +2,15 @@ general {
     gaps_in = 6
     gaps_out = 20
     border_size = 0
-    col.active_border = rgba(1a1a1a00) 
-    col.inactive_border = rgba(4c415e00)
+    col.active_border = rgb(ffffff) 
+    col.inactive_border = rgba(4c415e80)
     resize_on_border = false
     allow_tearing = false
     layout = dwindle
+}
+
+general {
+    col.active_border = rgb(000000) 
 }
 
 
