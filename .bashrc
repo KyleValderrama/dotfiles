@@ -7,6 +7,8 @@
 
 eval "$(starship init bash)"
 eval "$(zoxide init --cmd cd bash)"
+eval "$(tmux attach || tmux new)"
+
 source /usr/share/nvm/init-nvm.sh
 
 alias ls='ls --color=auto'
