@@ -1,5 +1,5 @@
 format = """
-[┌](white)\
+[╭](white)\
 [](bg1)\
 $os\
 $username\
@@ -7,8 +7,7 @@ $username\
 $directory $git_branch $git_status\ 
 $fill\
 $line_break\
-[└](white)\
-$time
+[╰❯ ](white)\
 """
 
 palette = "default"
