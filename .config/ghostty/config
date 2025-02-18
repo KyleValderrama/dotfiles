@@ -1,9 +1,11 @@
-font-family="JetBrainsMono Nerd Font"
+font-family="GeistMono Nerd Font"
 background=000000
-background-opacity=0.5
+font-style="Semibold"
+background-opacity=0.6
 window-decoration=false
+cursor-color=ffffff
 font-size=10
 window-padding-x=8
-window-padding-y=8
+window-padding-y=4
 keybind=ctrl+backspace=text:\x17
 theme=rose-pine

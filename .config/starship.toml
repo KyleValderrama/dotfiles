@@ -12,8 +12,6 @@ $line_break\
 
 palette = "default"
 
-add_newline = false
-
 [palettes.default]
 bg1 = "#383838"
 bg2 = "#636262"
