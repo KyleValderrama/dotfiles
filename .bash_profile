@@ -7,5 +7,5 @@ fi
 
 ssh-add &>/dev/null || eval `ssh-agent` &>/dev/null
 [ $? -eq 0 ] && {                                     
-	ssh-add ~/.ssh/id_ms_gh &>/dev/null 
+	ssh-add ~/.ssh/id_gh &>/dev/null 
 }
