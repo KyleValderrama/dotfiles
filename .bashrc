@@ -28,6 +28,7 @@ fi
 
 source /usr/share/nvm/init-nvm.sh
 
+alias python='/usr/bin/python3.9'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias vim='nvim'

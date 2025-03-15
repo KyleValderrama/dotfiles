@@ -50,3 +50,5 @@ layerrule = ignorezero,menu-closer
 
 layerrule = blur, wofi 
 layerrule = ignorezero, wofi
+
+layerrule = blur, zen-browser

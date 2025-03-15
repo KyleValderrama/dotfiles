@@ -7,7 +7,7 @@ $username\
 $directory $git_branch $git_status\ 
 $fill\
 $line_break\
-[╰❯ ](white)\
+[╰─> ](white)\
 """
 
 palette = "default"
