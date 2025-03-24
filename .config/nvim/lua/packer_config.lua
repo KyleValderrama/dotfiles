@@ -14,14 +14,17 @@ return require('packer').startup(function(use)
   }
   use('mg979/vim-visual-multi', {branch = 'maser'})
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use({
-	"neovim/nvim-lspconfig",
-	"hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/nvim-cmp",
-	"williamboman/nvim-lsp-installer", 
-  	"williamboman/mason.nvim",
-    	"williamboman/mason-lspconfig.nvim"
-     })
+
+
+	use({
+		"neovim/nvim-lspconfig",
+		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/nvim-cmp",
+		"williamboman/nvim-lsp-installer",
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"stevearc/conform.nvim",
+	})
 
   use 'famiu/feline.nvim'
   use ( "rose-pine/neovim", { name = "rose-pine" })

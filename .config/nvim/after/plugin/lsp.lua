@@ -1,3 +1,4 @@
+-- DEPECATED LSP
 -- Reserve a space in the gutter
 -- This will avoid an annoying layout shift in the screen
 vim.opt.signcolumn = 'yes'
@@ -36,19 +37,13 @@ require("mason-lspconfig").setup({
 	automatic_installation = true
 })
 
+
 require('lspconfig').ts_ls.setup({})
 require('lspconfig').lua_ls.setup({})
 require('lspconfig').tailwindcss.setup({})
 require('lspconfig').rust_analyzer.setup({})
 require('lspconfig').pyright.setup({})
-require('lspconfig').eslint.setup({
- on_attach = function(client, bufnr)
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = bufnr,
-      command = "EslintFixAll",
-    })
-  end,
-})
+require('lspconfig').eslint.setup({})
 
 -- Autocompletion
 local cmp = require('cmp')
