@@ -46,7 +46,7 @@ local c = {
 		end,
 		left_sep = {
 			str = "left_rounded",
-			hl = function() 
+			hl = function()
 				return {
 					fg = require("feline.providers.vi_mode").get_mode_color(),
 					bg = "transparent",
@@ -116,7 +116,6 @@ local c = {
 			},
 		},
 		hl = {
-			style = "bold",
 			bg = "bg"
 		},
 		left_sep = " ",
@@ -127,6 +126,20 @@ local c = {
 				bg = "transparent"
 			}
 		}
+	},
+	fileinfo_winbar = {
+		provider = {
+			name = "file_info",
+			opts = {
+				type = "relative",
+				path_sep = "  ",
+				file_readonly_icon = "",
+			},
+		},
+		hl = {
+			bg = "transparent",
+		},
+		left_sep = ""
 	},
 	diagnostic_errors = {
 		provider = "diagnostic_errors",
@@ -229,7 +242,7 @@ local left = {
 	c.diagnostic_warnings,
 	c.diagnostic_info,
 	c.diagnostic_hints,
-	}
+}
 
 local middle = {
 	c.separator,
@@ -241,9 +254,9 @@ local middle = {
 
 local right = {
 	c.gitDiffAdded,
-        c.gitDiffRemoved,
+	c.gitDiffRemoved,
 	c.gitDiffChanged,
-        c.gitBranch,
+	c.gitBranch,
 	c.position,
 	c.line_percentage,
 
@@ -262,10 +275,21 @@ local components = {
 	},
 }
 
+local left_winbar = {
+	c.fileinfo_winbar,
+}
+
 feline.setup({
 	components = components,
 	theme = rose_pine,
 	vi_mode_colors = vi_mode_colors,
 })
 
--- feline.statuscolumn.setup()
+
+require('feline').winbar.setup({
+	components = {
+		active = {
+			left_winbar
+		}
+	}
+})

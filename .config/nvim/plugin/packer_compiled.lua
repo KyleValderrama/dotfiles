@@ -87,7 +87,7 @@ _G.packer_plugins = {
   ["feline.nvim"] = {
     loaded = true,
     path = "/home/kyle/.local/share/nvim/site/pack/packer/start/feline.nvim",
-    url = "https://github.com/famiu/feline.nvim"
+    url = "https://github.com/aschrab/feline.nvim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,

@@ -4,16 +4,16 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
-  use 'navarasu/onedark.nvim'
-  use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.8',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
-  }
-  use('mg979/vim-visual-multi', {branch = 'maser'})
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+	-- Packer can manage itself
+	use 'wbthomason/packer.nvim'
+	use 'navarasu/onedark.nvim'
+	use {
+		'nvim-telescope/telescope.nvim', tag = '0.1.8',
+		-- or                            , branch = '0.1.x',
+		requires = { { 'nvim-lua/plenary.nvim' } }
+	}
+	use('mg979/vim-visual-multi', { branch = 'maser' })
+	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
 
 	use({
@@ -26,11 +26,10 @@ return require('packer').startup(function(use)
 		"stevearc/conform.nvim",
 	})
 
-  use 'famiu/feline.nvim'
-  use ( "rose-pine/neovim", { name = "rose-pine" })
+	use 'aschrab/feline.nvim'
+	use("rose-pine/neovim", { name = "rose-pine" })
 
-  use "lewis6991/gitsigns.nvim"
-  use 'nvim-tree/nvim-web-devicons'
-  use ("folke/trouble.nvim", { cmd = "Trouble" } )
-
+	use "lewis6991/gitsigns.nvim"
+	use 'nvim-tree/nvim-web-devicons'
+	use("folke/trouble.nvim", { cmd = "Trouble" })
 end)
